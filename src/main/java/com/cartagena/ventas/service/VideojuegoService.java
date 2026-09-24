@@ -18,6 +18,15 @@ public class VideojuegoService {
         return videojuegoRepository.findAll();
     }
 
+    public List<Videojuego> buscar(String texto) {
+        if (texto == null || texto.isBlank()) {
+            return listarTodos();
+        }
+        return videojuegoRepository
+                .findByTituloContainingIgnoreCaseOrPlataformaContainingIgnoreCaseOrGeneroContainingIgnoreCase(
+                        texto, texto, texto);
+    }
+
     public Videojuego buscarPorId(Long id) {
         return videojuegoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Videojuego no encontrado con id: " + id));

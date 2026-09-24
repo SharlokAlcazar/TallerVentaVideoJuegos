@@ -13,6 +13,10 @@
             <a class="nav-link" th:href="@{/videojuegos}">Videojuegos</a>
             <a class="nav-link" th:href="@{/clientes}">Clientes</a>
             <a class="nav-link" th:href="@{/ventas}">Ventas</a>
+            <a class="nav-link" th:href="@{/carrito}">
+                🛒 Carrito
+                <span class="badge bg-danger" th:if="${totalCarritoItems > 0}" th:text="${totalCarritoItems}"></span>
+            </a>
         </div>
     </div>
 </nav>

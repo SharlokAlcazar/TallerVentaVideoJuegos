@@ -17,8 +17,9 @@ public class VideojuegoController {
     private VideojuegoService videojuegoService;
 
     @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("videojuegos", videojuegoService.listarTodos());
+    public String listar(@RequestParam(required = false) String buscar, Model model) {
+        model.addAttribute("videojuegos", videojuegoService.buscar(buscar));
+        model.addAttribute("buscar", buscar);
         return "videojuegos/list";
     }
 
