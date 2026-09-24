@@ -29,6 +29,8 @@ public class Videojuego {
     @Min(value = 0, message = "El stock no puede ser negativo")
     private Integer stock;
 
+    private String imagenUrl;
+
     public Videojuego() {}
 
     public Videojuego(String titulo, String plataforma, String genero, BigDecimal precio, Integer stock) {
@@ -56,4 +58,7 @@ public class Videojuego {
 
     public Integer getStock() { return stock; }
     public void setStock(Integer stock) { this.stock = stock; }
+
+    public String getImagenUrl() { return imagenUrl; }
+    public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
 }
